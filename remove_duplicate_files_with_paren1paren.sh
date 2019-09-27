@@ -26,7 +26,8 @@ fi
 find $directory_path -type f -name '*(1).jpg' | # -delete |
 sort > files_deleted.txt
 
-echo 'LOOK at files_deleted.txt to VERIFY these are the files to delete.'
+echo 'Pause and LOOK at: files_deleted.txt. VERIFY these are the files to delete.'
+sleep 5s
 
 read -r -p 'If these are the files you want to delete, type Y: ' response
 response=${response,,}    # tolower
