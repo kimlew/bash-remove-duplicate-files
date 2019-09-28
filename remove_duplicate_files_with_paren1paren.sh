@@ -23,7 +23,8 @@ then
     exit 9999 # die with error code 9999
 fi
 
-find $directory_path -type f -name '*(1).jpg' | # -delete |
+find $directory_path -type f -name '*(1).jpg' | 
+# Note: Instead of loop, could also use at end of find line: -delete |
 sort > files_deleted.txt
 
 echo 'Pause and LOOK at: files_deleted.txt. VERIFY these are the files to delete.'
@@ -31,7 +32,7 @@ sleep 5s
 
 read -r -p 'If these are the files you want to delete, type Y: ' response
 response=${response,,}    # tolower
-if [[ "$response" =~ ^(Y|y|yes)$ ]]
+if [[ "$response" =~ ^(Y|y|Yes|yes)$ ]]
 then
     cat files_deleted.txt | 
     while read a_file_name; do
