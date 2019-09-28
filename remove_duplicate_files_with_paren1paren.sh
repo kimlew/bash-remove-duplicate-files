@@ -15,6 +15,7 @@
 
 echo "Type the directory path where the duplicate files are: "
 read directory_path
+echo
 echo "You typed: " $directory_path
 
 if [ ! -d $directory_path ] 
@@ -27,6 +28,7 @@ find $directory_path -type f -name '*(1).jpg' |
 # Note: Instead of loop, could also use at end of find line: -delete |
 sort > files_deleted.txt
 
+echo
 echo 'Pause and LOOK at: files_deleted.txt. VERIFY these are the files to delete.'
 sleep 5s
 
@@ -39,7 +41,7 @@ then
       # Deletes each file, 1 at a time, as listed in files_deleted.txt.
       rm "$a_file_name" # Note: Use double quotes when spaces might be in filenames.
     done
-    echo "The files have been removed."
+    echo "The files have been removed from the directory."
 else
     echo "Program exited." 
     exit 9999 # die with error code 9999
