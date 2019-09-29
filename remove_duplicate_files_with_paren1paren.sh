@@ -34,7 +34,7 @@ sleep 5s
 
 read -r -p 'If these are the files you want to delete, type Y: ' response
 response=${response,,}    # tolower
-if [[ "$response" =~ ^(Y|y|Yes|yes)$ ]]
+if [[ "$response" =~ ^(y|yes)$ ]]
 then
     cat files_deleted.txt | 
     while read a_file_name; do
